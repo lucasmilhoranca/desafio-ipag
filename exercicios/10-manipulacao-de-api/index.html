@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+    <p class="text-xl font-bold mb-4">Busque por um usuário do GitHub</p>
+    <form onsubmit="buscarUsuario(event)" id="form" class="flex items-center">
+        <input class="border px-4 py-2 mr-2 rounded focus:outline-none focus:border-green-500" type="text" name="user"
+            placeholder="Digite o nome do usuário">
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Buscar</button>
+    </form>
+
+    <div id="repos" class="mt-8 max-w-lg">
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
