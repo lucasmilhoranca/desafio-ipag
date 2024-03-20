@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
+<body class="p-5">
 
-<body>
-    <h1>5 - Validador de Senha</h1>
+    <h1 class="text-2xl font-bold mb-4">Digite uma senha</h1>
+
+    <input type="text" id="senha" name="pass" class="border rounded-md px-3 py-2 mb-3 focus:outline-none focus:border-green-500">
+
+    <button type="button" onclick="isValidPassword()" class="bg-green-500 text-white px-4 py-2 rounded-md ml-5">Testar senha</button>
+    <button type="button" onclick="isValidPasswordWithRegex()" class="bg-lime-500 text-white px-4 py-2 rounded-md">Testar senha (com regex)</button>
+
+    <div id="result" class="mt-2"></div>
+
+    <script src="./script.js"></script>
 </body>
-
 </html>
