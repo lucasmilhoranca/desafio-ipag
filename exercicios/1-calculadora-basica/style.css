@@ -8,7 +8,7 @@
 }
 
 .fundo{
-    background-image: linear-gradient(45deg, black, purple);
+    background-image: linear-gradient(45deg, #000, #15803d);
     height: 100vh;
     color: white;
     font-family: poppins;
