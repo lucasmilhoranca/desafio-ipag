@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jogo da Adivinhação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>4 - Jogo da Adivinhação</h1>
+<body class="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+    <h1 class="text-3xl font-bold mb-6">Jogo da Adivinhação</h1>
+
+    <label for="attempt" class="mb-2">Tentativa</label>
+    <input type="number" id="attempt" name="guess" class="border rounded-md px-4 py-2 mb-4 focus:outline-none focus:border-green-300">
+    <button onclick="getNumber()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Testar</button>
+
+    <div id="result" class="flex flex-col mt-4"></div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
