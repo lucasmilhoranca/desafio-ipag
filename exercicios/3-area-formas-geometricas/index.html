@@ -4,23 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>3 - Formas Geométricas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>3 - Formas Geomatricas</h1>
+<body class="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+    <h1 class="text-3xl font-bold mb-6">3 - Formas Geométricas</h1>
 
-    <label for="formaGeometrica">Escolha uma forma geométrica:</label>
-    <select id="formaGeometrica" name="formaGeometrica">
+    <label for="forma" class="mb-2">Escolha uma forma geométrica:</label>
+    <select id="forma" name="formaGeometrica" class="bg-white border rounded-md px-4 py-2 mb-4 focus:outline-none focus:border-green-300">
+        <option value="" selected disabled>Selecione uma opção</option>
         <option value="quadrado">Quadrado</option>
         <option value="retangulo">Retângulo</option>
         <option value="triangulo">Triângulo</option>
         <option value="circulo">Círculo</option>
     </select>
 
-    <div id="input">
-        
-    </div>
+    <form onsubmit="getForm(event)" class="flex flex-col items-center">
+        <div id="input" class="mb-4">
+
+        </div>
+
+        <div id="result" class="mb-4">
+
+        </div>
+
+        <button type="submit"
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Calcular
+            Área</button>
+    </form>
+
     <script src="./script.js"></script>
 </body>
 
