@@ -13,5 +13,6 @@ function maxAndMin(event) {
     const maiorNumero = Math.max(...numeros)
     const menorNumero = Math.min(...numeros)
 
-    div.innerHTML = `O maior número é ${maiorNumero} e o menor número é ${menorNumero}.`
+    div.innerHTML = `<span class="text-xl font-bold text-center block bg-gray-200 p-4 rounded-lg mb-6">O maior número é ${maiorNumero} e o menor número é ${menorNumero}.</span>
+    `
 }
