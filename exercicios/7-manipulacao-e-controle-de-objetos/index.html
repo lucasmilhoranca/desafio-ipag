@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Objetos</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         .tv {
@@ -65,7 +65,7 @@
 
     <div class="mb-4">
         <button onclick="ligar()"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline">
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline">
             Ligar
         </button>
         <button onclick="desligar()"
@@ -74,9 +74,8 @@
         </button>
     </div>
 
-    <div class="tv w-60 h-40 bg-gray-300 rounded-lg shadow-md relative mb-4">
-        <div id="status-tv"
-            class="tv-screen">
+    <div class="tv">
+        <div id="status-tv" class="tv-screen">
             TV Desligada
         </div>
     </div>

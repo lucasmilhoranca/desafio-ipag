@@ -72,14 +72,20 @@ function desligar() {
 
     result.innerHTML = ''
 
-    meuControle.marca = marcaControle
-    minhaTv.marca = marcaTV
-
-    if (minhaTv.ligada) {
-        meuControle.desligarTv(minhaTv)
-    } else {
+    if (!minhaTv.ligada) {
         result.innerHTML = `
             <span>Ligue a TV antes de desliga-la novamente</span>
         `
+    } else if (minhaTv.ligada && marcaControle !== meuControle.marca || marcaTV !== minhaTv.marca) {
+        result.innerHTML = `
+        <span>Desligue a TV da marca ${String(minhaTv.marca).toUpperCase()} primeiro.</span>
+    `
+    } else {
+        meuControle.marca = marcaControle
+        minhaTv.marca = marcaTV
+
+        meuControle.desligarTv(minhaTv)
     }
+
+
 }
