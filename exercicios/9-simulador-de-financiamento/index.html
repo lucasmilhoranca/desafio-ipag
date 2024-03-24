@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simulador Financeiro</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1>9 - Simulador Financeiro</h1>
+<body class="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+    <h1 class="text-3xl font-bold mb-6">9 - Simulador Financeiro</h1>
+
+    <form onsubmit="calcFinanciamento(event)" class="flex flex-col items-center">
+        <label for="valor" class="mb-2">Valor financiado:</label>
+        <input type="number" id="valor" required class="bg-white border border-gray-300 rounded-md px-4 py-2 mb-4 focus:outline-none focus:border-green-300">
+
+        <label for="parcelas" class="mb-2">Quantidade de parcelas:</label>
+        <input type="number" id="parcelas" required class="bg-white border border-gray-300 rounded-md px-4 py-2 mb-4 focus:outline-none focus:border-green-300">
+
+        <label for="juros" class="mb-2">Taxa de juros anual (%):</label>
+        <input type="number" id="juros" required class="bg-white border border-gray-300 rounded-md px-4 py-2 mb-4 focus:outline-none focus:border-green-300">
+
+        <button type="submit"
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Calcular</button>
+    </form>
+
+    <div id="result" class="mt-6">
+
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
