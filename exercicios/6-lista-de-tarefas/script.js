@@ -17,24 +17,41 @@ function addTask(event) {
 }
 
 function exibeTasks() {
-    const tableBody = document.getElementById("table-body");
-    tableBody.innerHTML = '';
+    if (tasks.length >= 0) {
+        const result = document.getElementById("result")
+        result.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Prioridade</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                
+            </tbody>
+        `
+        const tableBody = document.getElementById("table-body")
+        tableBody.innerHTML = ''
 
-    tasks.forEach((task, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${task.descricao}</td>
-            <td>${task.prioridade}</td>
-            <td>${task.status ? "Concluída" : "Pendente"}</td>
-            <td>
-                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="formEditarTask(${index})">Editar</button>
-                <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="removerTask(${index})">Remover</button>
-                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onclick="concluirTask(${index})">Concluir</button>
-            </td>
-        `;
-        tableBody.appendChild(row);
-    });
+        tasks.forEach((task, index) => {
+            const row = document.createElement("tr")
+            row.innerHTML = `
+                <td>${task.descricao}</td>
+                <td>${task.prioridade}</td>
+                <td>${task.status ? "Concluída" : "Pendente"}</td>
+                <td>
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="formEditarTask(${index})">Editar</button>
+                    <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="removerTask(${index})">Remover</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onclick="concluirTask(${index})">Concluir</button>
+                </td>
+            `   ;
+            tableBody.appendChild(row)
+        })
+    }
 }
+
 
 function removerTask(id) {
     tasks.splice(id, 1)
@@ -83,19 +100,19 @@ function orderByDescription() {
 }
 
 function orderByPriority() {
-    const priorityOrder = { "Alta": 3, "Média": 2, "Baixa": 1 };
+    const priorityOrder = { "Alta": 3, "Média": 2, "Baixa": 1 }
 
     tasks.sort((a, b) => {
-        const priorityA = priorityOrder[a.prioridade];
-        const priorityB = priorityOrder[b.prioridade];
+        const priorityA = priorityOrder[a.prioridade]
+        const priorityB = priorityOrder[b.prioridade]
 
-        return priorityB - priorityA;
+        return priorityB - priorityA
     });
 
     exibeTasks();
 }
 
 function orderByStatus() {
-    tasks.sort((a, b) => a.status - b.status);
-    exibeTasks();
+    tasks.sort((a, b) => a.status - b.status)
+    exibeTasks()
 }
