@@ -4,11 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Controle de Objetos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        .tv {
+            width: 300px;
+            height: 200px;
+            background-color: #f4f4f4;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .tv-screen {
+            width: 280px;
+            height: 180px;
+            background-color: #dcdcdc;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .tv-screen-on {
+            background-color: #fffacd;
+        }
+    </style>
 </head>
 
-<body>
-    <h1>7 - Manipulação e Controle de Objetos</h1>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">Controle de Objetos</h1>
+
+    <div class="mb-4">
+        <label for="controle" class="block mb-2">Selecione a marca do controle:</label>
+        <select id="controle" name="controle-tv"
+            class="bg-white border border-gray-300 rounded-md px-4 py-2 mb-2 focus:outline-none focus:border-green-300">
+            <option value="" selected disabled>Selecione uma opção</option>
+            <option value="lg">LG</option>
+            <option value="samsung">Samsung</option>
+            <option value="sony">Sony</option>
+        </select>
+    </div>
+
+    <div class="mb-4">
+        <label for="tv" class="block mb-2">Selecione a marca da TV:</label>
+        <select id="tv" name="televisao"
+            class="bg-white border border-gray-300 rounded-md px-4 py-2 mb-2 focus:outline-none focus:border-green-300">
+            <option value="" selected disabled>Selecione uma opção</option>
+            <option value="lg">LG</option>
+            <option value="samsung">Samsung</option>
+            <option value="sony">Sony</option>
+        </select>
+    </div>
+
+    <div class="mb-4">
+        <button onclick="ligar()"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded focus:outline-none focus:shadow-outline">
+            Ligar
+        </button>
+        <button onclick="desligar()"
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Desligar
+        </button>
+    </div>
+
+    <div class="tv w-60 h-40 bg-gray-300 rounded-lg shadow-md relative mb-4">
+        <div id="status-tv"
+            class="tv-screen">
+            TV Desligada
+        </div>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
