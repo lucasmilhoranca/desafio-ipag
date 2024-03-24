@@ -14,7 +14,7 @@ function isValidPassword() {
     }
 
     if (!hasNumber(password)) {
-        errorMessage += `<span class="text-red-500">A senha precisa conter ao menos número.</span> </br>`
+        errorMessage += `<span class="text-red-500">A senha precisa conter ao menos um número.</span> </br>`
     }
 
     result.innerHTML = ''
