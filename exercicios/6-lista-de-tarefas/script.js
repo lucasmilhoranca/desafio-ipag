@@ -17,24 +17,23 @@ function addTask(event) {
 }
 
 function exibeTasks() {
-    const lista = document.getElementById("lista")
-    lista.innerHTML = ''
+    const tableBody = document.getElementById("table-body");
+    tableBody.innerHTML = '';
 
     tasks.forEach((task, index) => {
-        const item = document.createElement("span")
-        item.innerHTML = `
-            <div>
-                ${task.descricao} - Prioridade: ${task.prioridade} - Status: ${task.status ? "Concluída" : "Pendente"} 
-                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="formEditarTask(${index})">Editar</button> 
-                <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="removerTask(${index})">Remover</button> 
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${task.descricao}</td>
+            <td>${task.prioridade}</td>
+            <td>${task.status ? "Concluída" : "Pendente"}</td>
+            <td>
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="formEditarTask(${index})">Editar</button>
+                <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="removerTask(${index})">Remover</button>
                 <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onclick="concluirTask(${index})">Concluir</button>
-            </div>
-        `
-        item.id = `${index}`
-        item.classList.add("mr-4");
-        lista.appendChild(item)
-        lista.appendChild(document.createElement("br"))
-    })
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
 }
 
 function removerTask(id) {
