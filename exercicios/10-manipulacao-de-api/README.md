@@ -10,6 +10,7 @@ Este programa utiliza a API REST do GitHub para obter os repositórios de um usu
 4. O programa fará uma requisição à API do GitHub para obter os repositórios do usuário fornecido.
 5. Ele exibirá na tela as informações de cada repositório, incluindo o nome, descrição, quantidade de estrelas e link para o repositório.
 
+
 ## Observações
 
 - Certifique-se de ter uma conexão com a internet para que o programa possa fazer a requisição à API do GitHub.
