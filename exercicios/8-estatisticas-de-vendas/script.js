@@ -52,9 +52,16 @@ function processData(data) {
 }
 
 function exibirEstatiscas(statistics) {
+    vendasPorTipo(statistics);
+
+    vendasPorTipoRegiao(statistics);
+
+    tipoProdutoMaiorReceitaPais(statistics);
+}
+
+function vendasPorTipo(statistics) {
     const statisticsDiv = document.getElementById('statistics');
 
-    // Exibindo vendas totais por tipo
     const totalSalesTable = document.createElement('table');
     totalSalesTable.classList.add('table', 'border', 'border-green-400', 'mt-4', 'mb-4');
     totalSalesTable.innerHTML = `
@@ -85,8 +92,11 @@ function exibirEstatiscas(statistics) {
     }
     statisticsDiv.appendChild(document.createElement('h3')).textContent = 'Total de vendas por tipo';
     statisticsDiv.appendChild(totalSalesTable);
+}
 
-    // Exibindo vendas por tipo e região
+function vendasPorTipoRegiao(statistics) {
+    const statisticsDiv = document.getElementById('statistics');
+
     for (const regionType in statistics.salesByRegion) {
         const [region, type] = regionType.split(' - ');
         const { unitsSold, revenue } = statistics.salesByRegion[regionType];
@@ -113,8 +123,11 @@ function exibirEstatiscas(statistics) {
         statisticsDiv.appendChild(document.createElement('h3')).textContent = `Vendas por ${type} em ${region}`;
         statisticsDiv.appendChild(salesByRegionTable);
     }
+}
 
-    // Exibindo tipo de produto com maior receita por país
+function tipoProdutoMaiorReceitaPais(statistics) {
+    const statisticsDiv = document.getElementById('statistics');
+
     const highestRevenueTable = document.createElement('table');
     highestRevenueTable.classList.add('table', 'border', 'border-green-400');
     highestRevenueTable.innerHTML = `
