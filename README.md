@@ -6,7 +6,7 @@ Esse repositório é destinado para armazenar os exercícios do Desafio Júnior 
 
 Para visualizar e acessar os exercícios do Desafio Júnior Ipag, abra o arquivo *index.html* localizado em [desafio-ipag/index.html](./index.html). Esta página contém links para todos os exercícios disponíveis, permitindo uma navegação fácil e direta a cada um deles.
 
-O arquivo pode ser executado utilizando a extensão *Liver Server* do VS Code ou ser executado direto do navegador
+O arquivo pode ser executado utilizando a extensão *Live Server* do VS Code ou ser executado direto do navegador
 
 ## Exercícios
 
