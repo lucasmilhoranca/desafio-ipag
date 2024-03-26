@@ -90,7 +90,7 @@ function calcRectangle() {
     const base = document.getElementById("base").value
     const height = document.getElementById("altura").value
 
-    return Number(base) < 0 || Number(height) < 0 ? -1 : Number(base) * Number(height) / 2
+    return Number(base) < 0 || Number(height) < 0 ? -1 : Number(base) * Number(height)
 }
 
 function calcCircle() {
